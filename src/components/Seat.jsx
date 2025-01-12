@@ -36,7 +36,7 @@ const Seat = ({ label, value }) => {
     if (totalPrice.length <= 8 && !e.target.checked && selectedType) {
       setActive("bg-gray-600");
       setTotalPrice((prev) => [
-        ...prev.filter((obj) => obj.value !== label),
+        ...prev.filter((obj) => obj.label !== label),
       ]);
       setChecked(false);
     }
