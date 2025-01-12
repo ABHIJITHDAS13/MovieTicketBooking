@@ -64,7 +64,10 @@ function App() {
           className="bg-blue-500 text-white font-semibold h-15 w-40 p-1 m-auto rounded hover:bg-blue-700"
           onClick={handleclick}
         >
-          Book Now: ₹{totalAmount} <br/> ({totalPrice.length} {totalPrice.length === 1 ? "Ticket" : "Tickets"})
+            Book Now: ₹{totalAmount} <br /> {totalPrice.length > 0
+              ? `${totalPrice.length} ${totalPrice.length === 1 ? "Ticket" : "Tickets"}`
+              : ""}
+
         </button>
       </footer>
       </div>
