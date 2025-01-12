@@ -11,14 +11,19 @@ function App() {
   }, 0);
 
   const handleclick = () => { 
-    const seats = totalPrice.map((obj)=> obj.label);
-   const confirmation = confirm(
-    `Confirm your Tickets.You have Booked ${totalPrice.length} Tickets of Seats ${seats} \n 
-    Total Price: ₹${totalAmount}`
-  );
-  if(confirmation){
-    alert("Your Seats Are Booked");
-  }
+    if(totalPrice.length>0){
+      const seats = totalPrice.map((obj)=> obj.label);
+      const confirmation = confirm(
+        `Confirm your Tickets.You have Booked ${totalPrice.length} Tickets of Seats ${seats} \n 
+        Total Price: ₹${totalAmount}`
+      );
+
+      if(confirmation){
+        alert("Your Seats Are Booked");
+      }
+    }else{
+      alert("Select any seats");
+    }
   }
   return (
     <>
